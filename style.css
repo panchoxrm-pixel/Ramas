@@ -1,3 +1,124 @@
-body { font-family: sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; }
-.comando { background: white; padding: 15px; margin-bottom: 10px; border-left: 5px solid #2ecc71; border-radius: 4px; }
-h1 { color: #2c3e50; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  background: #0b0e14;
+  background-image: radial-gradient(circle at 10% 20%, rgba(30, 167, 253, 0.03) 0%, rgba(0, 0, 0, 0) 80%);
+  color: #e2e8f0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #11161f;
+  border-bottom: 2px solid #1abc9c;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+h1 {
+  color: #f0f9ff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff, #1abc9c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-top: 8px;
+  border-bottom: 1px dashed #1abc9c;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Contenedor grid */
+#contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas */
+.comando {
+  background: #0f141c;
+  padding: 20px;
+  border-radius: 20px;
+  border-left: 4px solid #1abc9c;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.comando:hover {
+  transform: translateY(-4px);
+  background: #151e2c;
+  border-left-color: #f39c12;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.comando h2 {
+  color: #1abc9c;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  display: inline-block;
+  border-bottom: 1px solid #2c3e50;
+  padding-bottom: 4px;
+}
+
+.comando:hover h2 {
+  color: #f39c12;
+}
+
+.comando p {
+  color: #cbd5e6;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  body {
+    padding: 12px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  .comando {
+    padding: 16px;
+  }
+  .comando h2 {
+    font-size: 1.3rem;
+  }
+  #contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scroll con estilo */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1abc9c;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f39c12;
+}
